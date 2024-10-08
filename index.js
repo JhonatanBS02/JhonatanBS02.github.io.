@@ -126,14 +126,14 @@ window.addEventListener('scroll', function () {
 
 // Inicializa o EmailJS com seu User ID
 (function() {
-    emailjs.init("fDsYw4NmcYdL9rrZx"); // Substitua pelo seu User ID do EmailJS
+    emailjs.init("fDsYw4NmcYdL9rrZx"); // Seu User ID do EmailJS
 })();
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     // Envie o e-mail com EmailJS
-    emailjs.sendForm('service_9npx21u', 'template_lacxuhj, this) // Substitua pelos seus IDs
+    emailjs.sendForm('service_9npx21u', 'template_lacxuhj', this) // IDs corretos
         .then(function(response) {
             console.log('E-mail enviado com sucesso!', response.status, response.text);
             alert("Mensagem enviada com sucesso!");
