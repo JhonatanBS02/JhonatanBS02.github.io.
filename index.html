@@ -192,20 +192,18 @@
 
     <!-- Seção de Contatos -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact-<span>Me</span></h2>
-        <!-- Formulário para Recebimento de Suporte -->
-        <form action="">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="number" placeholder="Number" required>
-                <input type="text" placeholder="Subject" required>
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-
-    </section>
+    <h2 class="heading">Contact-<span>Me</span></h2>
+    <form id="contact-form">
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="number" placeholder="Number" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+</section>
     <!-- Seção de Footer -->
     <footer class="footer">
         <!-- Botões do Footer -->
