@@ -133,14 +133,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault();
 
     // Envie o e-mail com EmailJS
-    emailjs.sendForm('service_9npx21u', 'template_lacxuhj', this) // IDs corretos
-        .then(function(response) {
-            console.log('E-mail enviado com sucesso!', response.status, response.text);
-            alert("Mensagem enviada com sucesso!");
-            document.getElementById('contact-form').reset(); // Limpa o formulário após o envio
-        }, function(error) {
-            console.log('Erro ao enviar e-mail:', error);
-            alert("Erro ao enviar mensagem, tente novamente.");
-        });
+    emailjs.sendForm('service_9npx21u', 'template_lacxuhj', this)
+    .then(function(response) {
+        console.log('E-mail enviado com sucesso!', response.status, response.text);
+        alert("Mensagem enviada com sucesso!");
+        document.getElementById('contact-form').reset(); // Limpa o formulário após o envio
+    }, function(error) {
+        console.log('Erro ao enviar e-mail:', error);
+        alert("Erro ao enviar mensagem, tente novamente.");
+    });
 });
 
