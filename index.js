@@ -123,3 +123,24 @@ window.addEventListener('scroll', function () {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
+// Inicializa o EmailJS com seu User ID
+(function() {
+    emailjs.init("fDsYw4NmcYdL9rrZx"); // Substitua pelo seu User ID do EmailJS
+})();
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Envie o e-mail com EmailJS
+    emailjs.sendForm('service_9npx21u', 'template_lacxuhj, this) // Substitua pelos seus IDs
+        .then(function(response) {
+            console.log('E-mail enviado com sucesso!', response.status, response.text);
+            alert("Mensagem enviada com sucesso!");
+            document.getElementById('contact-form').reset(); // Limpa o formulário após o envio
+        }, function(error) {
+            console.log('Erro ao enviar e-mail:', error);
+            alert("Erro ao enviar mensagem, tente novamente.");
+        });
+});
+
