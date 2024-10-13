@@ -1,7 +1,5 @@
-//Função para escrever os Textos no Span
-
 document.addEventListener('DOMContentLoaded', () => {
-  const typingSpan = document.querySelector('.text-typing span');
+  const typingSpans = document.querySelectorAll('.text-typing span');
   const texts = [
     'Web Developer',
     'Front-End Developer',
@@ -9,35 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
     'React Developer',
     'Js Developer',
   ];
-  let index = 0;
-  let charIndex = 0;
-  let currentText = '';
-  let isDeleting = false;
 
-  function type() {
-    if (isDeleting) {
-      currentText = texts[index].substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      currentText = texts[index].substring(0, charIndex + 1);
-      charIndex++;
+  typingSpans.forEach((typingSpan) => {
+    let index = 0;
+    let charIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
+
+    function type() {
+      if (isDeleting) {
+        currentText = texts[index].substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        currentText = texts[index].substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      typingSpan.textContent = currentText;
+
+      if (!isDeleting && charIndex === texts[index].length) {
+        isDeleting = true;
+        setTimeout(type, 1000); // Pausa após completar o texto
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % texts.length; // Muda para o próximo texto
+        setTimeout(type, 500); // Pausa antes de iniciar o próximo texto
+      } else {
+        setTimeout(type, isDeleting ? 50 : 150); // Velocidade de digitação
+      }
     }
 
-    typingSpan.textContent = currentText;
-
-    if (!isDeleting && charIndex === texts[index].length) {
-      isDeleting = true;
-      setTimeout(type, 1000);
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      index = (index + 1) % texts.length;
-      setTimeout(type, 500);
-    } else {
-      setTimeout(type, isDeleting ? 50 : 150);
-    }
-  }
-
-  type(); 
+    type(); // Inicia a digitação para este span
+  });
 });
 
 // Função de Abrir a NavBar
@@ -125,22 +126,54 @@ window.addEventListener('scroll', function () {
 });
 
 // Inicializa o EmailJS com seu User ID
-(function() {
-    emailjs.init("fDsYw4NmcYdL9rrZx"); // Seu User ID do EmailJS
+(function () {
+  emailjs.init('fDsYw4NmcYdL9rrZx'); // Seu User ID do EmailJS
 })();
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+// Função para formatar o número de telefone
+function formatPhoneNumber(value) {
+  // Remove todos os caracteres não numéricos
+  const cleaned = value.replace(/\D/g, '');
+
+  // Verifica se o número tem pelo menos 10 dígitos
+  if (cleaned.length <= 10) {
+    return cleaned
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d)(\d{4})$/, '$1-$2');
+  } else {
+    return cleaned.replace(/(\d{2})(\d)(\d{4})(\d{4})$/, '($1) $2-$3.$4');
+  }
+}
+
+// Adiciona um listener para o input do número
+document.getElementById('number').addEventListener('input', function (e) {
+  let inputValue = e.target.value;
+  e.target.value = formatPhoneNumber(inputValue);
+});
+
+document
+  .getElementById('contact-form')
+  .addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Envie o e-mail com EmailJS
-    emailjs.sendForm('service_9npx21u', 'template_lacxuhj', this)
-    .then(function(response) {
-        console.log('E-mail enviado com sucesso!', response.status, response.text);
-        alert("Mensagem enviada com sucesso!");
+    emailjs.sendForm('service_9npx21u', 'template_lacxuhj', this).then(
+      function (response) {
+        console.log(
+          'E-mail enviado com sucesso!',
+          response.status,
+          response.text
+        );
+        alert('Mensagem enviada com sucesso!');
         document.getElementById('contact-form').reset(); // Limpa o formulário após o envio
-    }, function(error) {
+      },
+      function (error) {
         console.log('Erro ao enviar e-mail:', error);
-        alert("Erro ao enviar mensagem, tente novamente.");
-    });
-});
-
+        alert('Erro ao enviar mensagem, tente novamente.');
+      }
+    );
+  });
+// Função de Alerta
+function alerta() {
+  alert('Site ainda em desenvolvimento e sobre privacidade de desenvolvimento');
+}
