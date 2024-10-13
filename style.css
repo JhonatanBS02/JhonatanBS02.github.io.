@@ -260,7 +260,7 @@
 
     /* Configurações base para as Seções */
     section {
-        min-height: 100vh;
+        min-height: 80vh;
         padding: 5rem 9% 5rem;
     }
 
