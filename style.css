@@ -202,7 +202,7 @@
             top: 100%;
             right: -100%;
             width: 150px;
-            height: 25vh;
+            height: 2v6h;
             background-color: rgba(0, 74, 173, 0.6);
             display: flex;
             flex-direction: column;
@@ -270,6 +270,26 @@
         justify-content: center;
         align-items: center;
         gap: 8rem;
+    }
+
+    /* Estilo padrão para telas maiores (desktop) */
+    .home-content.mobile {
+        display: none;
+        /* Esconde a versão mobile em telas maiores */
+    }
+
+    @media (max-width: 768px) {
+        /* Quando a tela for menor que 768px (típico para tablets e celulares) */
+
+        .home-content.desktop {
+            display: none;
+            /* Esconde a versão desktop em telas pequenas */
+        }
+
+        .home-content.mobile {
+            display: block;
+            /* Exibe a versão mobile */
+        }
     }
 
     .home .home-content h1 {
@@ -435,7 +455,6 @@
         border-radius: 1rem;
         padding: 2rem;
         width: 70%;
-        height: 300px;
         margin: auto;
         margin-top: 2rem;
     }
@@ -503,7 +522,6 @@
         .skills .container {
             margin-top: 5px;
             width: 100%;
-            height: 570px;
         }
 
         .skills .container .bar .info img {
@@ -740,6 +758,10 @@
     @media (max-width:992px) {
         .contact .heading {
             font-size: 8rem;
+        }
+
+        .contact form .btn {
+            font-size: 3rem;
         }
     }
 
