@@ -24,10 +24,10 @@
     <header class="header">
         <a href="#home" class="logo"><span>SANT</span></a>
         <ul class="navbar">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#skills">Skilss</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#contact">Contac-Me</a></li>
+            <li><a href="#home" class="active">Início</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#works">Trabalhos</a></li>
+            <li><a href="#contact">Contatos</a></li>
         </ul>
         <!-- Dark Mode Configurações -->
         <div class="main">
@@ -46,15 +46,17 @@
     </header>
 
     <!-- Seção de Início -->
+    <!-- Seção de Início -->
     <section class="home" id="home">
-        <!-- Imagem do Início -->
+        <!-- Imagem do Início (essa pode permanecer a mesma para todos os dispositivos) -->
         <div class="home-img">
             <img src="img/Sant Developper.jpg" alt="">
         </div>
-        <!-- Texto da Tela de Início -->
-        <div class="home-content">
-            <h1>Hi, It's <span>Sant</span></h1>
-            <h3 class="text-typing">I'm a <span></span></h3>
+
+        <!-- Texto da tela de início para DESKTOP -->
+        <div class="home-content desktop">
+            <h1>Olá, Eu sou <span>Sant</span></h1>
+            <h3 class="text-typing">E sou <span></span></h3>
             <p>Tenho 18 anos, sou desenvolvedor front-end e estudante de Análise e Desenvolvimento de Sistemas, com
                 especialização em
                 Front-End e forte interesse em agilidade com Scrum. Tenho experiência em HTML, CSS, JavaScript e
@@ -75,15 +77,36 @@
                 oportunidades que me permitam aplicar meus conhecimentos e crescer profissionalmente em um ambiente
                 dinâmico e
                 colaborativo.</p>
-            <!--Links Sociais na tela de Início  -->
+            <!-- Links Sociais e botão de currículo como estão -->
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/devsantx/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/devsantx/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/devsantx" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.instagram.com/devsantx/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            <!-- Link do Currículo (BTN) -->
-            <a href="Curriculo Pessoal.pdf" target="_blank" class="btn">Download CV</a>
+            <a href="Curriculo Pessoal.pdf" target="_blank" class="btn">Baixe o Currículo</a>
+        </div>
+
+        <!-- Texto da tela de início para MOBILE -->
+        <div class="home-content mobile">
+            <h1>Oi, Eu sou <span>Sant</span></h1>
+            <h3 class="text-typing">E sou <span></span></h3>
+            <p>Tenho 18 anos, sou desenvolvedor front-end e estudante de Análise e Desenvolvimento de Sistemas, com foco
+                em Front-End e
+                interesse em agilidade com Scrum. Participei de um projeto escolar desenvolvendo um site para
+                professores compartilharem
+                conteúdos com alunos. Já atuei como freelancer, o que aprimorou minhas habilidades e colaboração. Busco
+                oportunidades
+                para aplicar meus conhecimentos e crescer profissionalmente em um ambiente dinâmico.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/devsantx/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/devsantx" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/devsantx/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <a href="Curriculo Pessoal.pdf" target="_blank" class="btn">Baixe o Currículo</a>
         </div>
     </section>
 
@@ -166,7 +189,7 @@
                             libero repellendus nisi.</p>
                     </div>
                     <div class="botao">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn">Saiba Mais!</a>
+                        <a href="#" rel="noopener noreferrer" class="btn" onclick="alerta()">Saiba Mais!</a>
                     </div>
                 </div>
             </div>
@@ -183,7 +206,8 @@
                             nihil.</p>
                     </div>
                     <div class="botao">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn">Saiba Mais!</a>
+                        <a href="#" rel="noopener noreferrer" class="btn" onclick="alerta()">Saiba
+                            Mais!</a>
                     </div>
                 </div>
             </div>
@@ -192,19 +216,20 @@
 
     <!-- Seção de Contatos -->
     <section class="contact" id="contact">
-    <h2 class="heading">Contact-<span>Me</span></h2>
-    <form id="contact-form">
-        <div class="input-box">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="number" name="number" placeholder="Number" required>
-            <input type="text" name="subject" placeholder="Subject" required>
-        </div>
-        <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-        <input type="submit" value="Send Message" class="btn">
-    </form>
-</section>
-     <!-- Inclua o SDK do EmailJS -->
+        <h2 class="heading">Contact-<span>Me</span></h2>
+        <form id="contact-form">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" id="number" name="number" placeholder="Número" required>
+                <input type="text" name="subject" placeholder="Assunto" required>
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Sua Mensagem"></textarea>
+            <input type="submit" value="Enviar Mensagem" class="btn">
+        </form>
+    </section>
+
+    <!-- Inclua o SDK do EmailJS -->
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <!-- Seção de Footer -->
     <footer class="footer">
@@ -216,16 +241,16 @@
             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
         <ul class="list">
-            <li><a href="#">FAQ</a></li>
+            <!-- <li><a href="#">FAQ</a></li> -->
             <li><a href="#home">Início</a></li>
             <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#education">Formação Acadêmica</a></li>
+            <!-- <li><a href="#education">Formação Acadêmica</a></li> -->
             <li><a href="#works">Trabalhos</a></li>
             <li><a href="#contac">Contact</a></li>
             <li><a href="#">Privacy Policies</a></li>
         </ul>
         <p class="copyright">
-            © Sant Developer | All Rights Reserveds
+            © Sant Developer | Todos os Direitos <Ri:viewport></Ri:viewport>eservados
         </p>
     </footer>
     <!-- Link para o Script -->
