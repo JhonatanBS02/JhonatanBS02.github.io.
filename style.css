@@ -501,6 +501,20 @@
         margin-left: 0.5rem;
     }
 
+    @media (max-width: 1280px) {
+        .skills .container {
+            width: 90%;
+            padding: 10px 10px;
+        }
+
+        .skills .container .bar {
+            margin-bottom: 15px;
+            padding: 16px;
+            border-radius: 1rem;
+        }
+    }
+
+
     /* Configurações de Habilidades para Celular */
     @media screen and (max-width:600px) {
         .skills .heading {
