@@ -310,16 +310,19 @@
     }
 
     .home-img {
+        padding: 10px;
+        /* Adiciona um espaço ao redor da imagem */
         border-radius: 50%;
     }
 
     .home-img img {
-        position: relative;
-        width: 26vw;
-        height: 25vw;
+        width: 100%;
+        height: auto;
         border-radius: 50%;
         box-shadow: 0 0 25px var(--overlay-color);
         cursor: pointer;
+        object-fit: cover;
+        /* Altere para 'contain' para evitar o corte */
     }
 
     .home-img img:hover {
@@ -607,11 +610,12 @@
 
     .works .box .text {
         justify-content: center;
-        padding: 0 0%;
+        padding: 0 -200px;
     }
 
     .works .box p {
         font-size: 15px;
+        justify-content: center;
     }
 
     .works .box .botao {
