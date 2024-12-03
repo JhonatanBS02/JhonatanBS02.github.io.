@@ -12,13 +12,13 @@
     }
 
     :root {
-        --bg-color-dark: #110230;
+        --bg-color-dark: #000000;
         --second-bg-dark: #092ef66f;
         --text-color-white: #e2e2d2;
         --bg-color-white: #e2e2d2;
         --second-bg-white: #7196c0;
         --text-color-black: #243447;
-        --overlay-color: #0191ff;
+        --overlay-color: #0A4F12;
     }
 
     html {
